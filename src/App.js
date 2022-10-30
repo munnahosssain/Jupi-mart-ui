@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import Footer from './Pages/Shared/Footer';
 
 import Navbar from './Pages/Shared/Navbar';
-const Home = React.lazy(() => import('./Pages/Home/Home'));
+import Shop from './Pages/Shop/Shop';
+// const Home = React.lazy(() => import('./Pages/Home/Home'));
 const Error = React.lazy(() => import('./Pages/Shared/Error'));
 
 const App = () => {
@@ -20,7 +21,8 @@ const App = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Shop />} />
           {/* <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="teams" element={<Teams />}>
