@@ -9,7 +9,7 @@ const Navbar = () => {
         <li><Link to='inventory'>Inventory</Link></li>
     </>
     return (
-        <div className="navbar bg-neutral text-neutral-content lg:px-20 ">
+        <div className="navbar bg-neutral text-neutral-content lg:px-20">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
