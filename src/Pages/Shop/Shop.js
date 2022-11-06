@@ -1,19 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import useProducts from '../../Hooks/useProducts';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Products from '../Products/Products.products/Products';
 import ShopCart from './Shop.Cart';
 
 const Shop = () => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useProducts();
     const [cart, setCart] = useState([]);
-
-    useEffect(() => {
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data)
-            })
-    }, []);
 
     useEffect(() => {
         const storedCart = getStoredCart();
@@ -21,7 +14,7 @@ const Shop = () => {
         for (const id in storedCart) {
             const addedProduct = products.find(product => product.id === id);
             if (addedProduct) {
-                const quantity = storedCart[id]
+                const quantity = storedCart[id];
                 addedProduct.quantity = quantity;
                 savedCart.push(addedProduct);
             }
@@ -43,7 +36,7 @@ const Shop = () => {
         }
         setCart(newCart);
         addToDb(selectedProduct.id);
-    }
+    };
 
     return (
         <div className='card-container sticky top' style={{ display: "grid", gridTemplateColumns: "4fr 1fr" }}>

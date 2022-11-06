@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import Orders from './Pages/Orders/Orders';
 import Footer from './Pages/Shared/Footer';
 
 import Navbar from './Pages/Shared/Navbar';
@@ -23,6 +24,7 @@ const App = () => {
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
           <Route path="/" element={<Shop />} />
+          <Route path="/order" element={<Orders />} />
           {/* <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="teams" element={<Teams />}>
