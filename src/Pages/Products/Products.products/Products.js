@@ -10,13 +10,11 @@ const Products = ({ product, addProducts }) => {
             <div className="card-body py-0 px-3 mb-2">
                 <h2 className="text-xl">{name}</h2>
                 <p>price: ৳ {price}</p>
-                {/* <div className='flex'> */}
                 <small>Manufacturer : {seller}</small>
                 <small>rating : {ratings} star</small>
-                {/* </div> */}
             </div>
             <div className="">
-                <button onClick={() => addProducts(product)} className="btn btn-block btn-warning">Add to cart<MdShoppingCart className='ml-2' /></button>
+                <button onClick={() => addProducts(product)} className="btn btn-block btn-warning">Add to cart<MdShoppingCart size={20} className='ml-2' /></button>
             </div>
         </div>
     );

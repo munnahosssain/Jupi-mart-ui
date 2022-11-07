@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Orders from './Pages/Orders/Orders';
 import Footer from './Pages/Shared/Footer';
 
@@ -33,6 +33,7 @@ const App = () => {
             <Route index element={<LeagueStandings />} />
           </Route>
         </Route> */}
+        
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer/>

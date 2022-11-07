@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { CiMoneyCheck1 } from 'react-icons/ci';
 
 const ShopCart = ({ cart }) => {
     let total = 0;
@@ -14,12 +16,14 @@ const ShopCart = ({ cart }) => {
 
     return (
         <div style={{ position: "sticky", top: 10 }}>
-            <h3>Order summary</h3>
+            <h3 className='text-2xl text-center font-bold p-5 mb-4'>Order Summary</h3>
             <p>Selected Items: {quantity}</p>
-            <p>Total Price: ৳ {total}</p>
-            <p>Total Shipping Charge: ৳ {shipping}</p>
-            <p>Tax:৳ {tax}</p>
-            <p>Grand Total: ৳{grandTotal}</p>
+            <p className='mt-5 mb-5'>Total Price: ৳ {total}</p>
+            <p>Total Shipping: ৳ {shipping}</p>
+            <p className='mt-5 mb-5'>Tax:৳ {tax}</p>
+            <p className='font-bold'>Grand Total: ৳{grandTotal}</p>
+            <Link to='/delete' className="btn btn-block btn-error mt-5">Clear Cart<CiMoneyCheck1 size={30} className='ml-2' /></Link>
+            <Link to='/order' className="btn btn-block btn-success mt-5">Proceed Checkout<CiMoneyCheck1 size={30} className='ml-2' /></Link>
         </div>
     );
 };
