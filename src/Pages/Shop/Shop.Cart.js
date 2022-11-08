@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CiMoneyCheck1 } from 'react-icons/ci';
+import { RiDeleteBinLine } from 'react-icons/ri';
+import { HiArrowNarrowRight } from 'react-icons/hi';
 
-const ShopCart = ({ cart }) => {
+const ShopCart = (props) => {
+    const { cart } = props;
+
     let total = 0;
     let shipping = 0;
     let quantity = 0;
@@ -22,8 +25,11 @@ const ShopCart = ({ cart }) => {
             <p>Total Shipping: ৳ {shipping}</p>
             <p className='mt-5 mb-5'>Tax:৳ {tax}</p>
             <p className='font-bold'>Grand Total: ৳{grandTotal}</p>
-            <Link to='/delete' className="btn btn-block btn-error mt-5">Clear Cart<CiMoneyCheck1 size={30} className='ml-2' /></Link>
-            <Link to='/order' className="btn btn-block btn-success mt-5">Proceed Checkout<CiMoneyCheck1 size={30} className='ml-2' /></Link>
+            <Link to='/delete' className="btn btn-block btn-error mt-5 text-white">Clear Cart<RiDeleteBinLine size={30} className='ml-2' /></Link>
+            <Link to='/order' className="btn btn-block btn-success mt-5 text-white">
+                {props.children}
+                <HiArrowNarrowRight size={30} className='ml-2' />
+            </Link>
         </div>
     );
 };
